@@ -7,7 +7,7 @@ const cors = require("cors");
 const path = require("path");
 
 app.use(cors({
-    origin: "https://apnakart.vercel.app/",
+    origin: "https://apnakart.vercel.app",
     credentials: true,
   }));
   
@@ -17,6 +17,7 @@ app.use("/", express.static(path.join(__dirname,"./uploads")));
 app.use("/test", (req, res) => {
   res.send("Hello world!");
 });
+
 
 app.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
 
